@@ -19,25 +19,19 @@ services:
 before_install:
   - "echo '--colour' > ~/.rspec"
   - "echo 'gem: --no-document' > ~/.gemrc"
-  # Solves rainbow issue: https://github.com/sickill/rainbow/issues/48
   - gem update --system
 
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c "CREATE USER \"rails-bootstrap\" WITH PASSWORD 'rails-bootstrap';" -U postgres
-  - psql -c "DROP DATABASE IF EXISTS \"rails-bootstrap_test\";" -U postgres
-  - psql -c "CREATE DATABASE \"rails-bootstrap_test\" ENCODING 'utf8';" -U postgres
+  - psql -c "CREATE USER \"wbooks-api\" WITH PASSWORD 'wbooks-api';" -U postgres
+  - psql -c "DROP DATABASE IF EXISTS \"wbooks-api_test\";" -U postgres
+  - psql -c "CREATE DATABASE \"wbooks-api_test\" ENCODING 'utf8';" -U postgres
   - bundle exec rake db:migrate
 
 script:
   - bundle exec rspec spec -fd
   - bundle exec rubocop app spec -R --format simple
   - bundle exec scss-lint app/assets/stylesheets/
-
-#notifications:
-#  email:
-#    recipients:
-#      - rails-bootstrap-dev@wolox.com.ar
 
 cache:
   bundler: true

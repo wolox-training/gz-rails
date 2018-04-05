@@ -1,0 +1,5 @@
+test:
+  <<: *default
+  database: wbooks-api_test
+  username: wbooks-api
+  password: wbooks-api
