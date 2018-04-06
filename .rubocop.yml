@@ -3,7 +3,7 @@ Rails:
 
 AllCops:
   Exclude:
-    - spec/support/spec_helper.rb
+    - spec/spec_helper.rb
     - spec/rails_helper.rb
     - db/**/*
     - docs/**/*
