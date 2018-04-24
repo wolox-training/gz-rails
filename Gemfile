@@ -41,3 +41,5 @@ gem 'rubocop-rspec'
 
 # Add devise for authentication
 gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
