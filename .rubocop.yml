@@ -44,3 +44,9 @@ RSpec/MultipleExpectations:
 
 RSpec/NestedGroups:
   Max: 3
+
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
