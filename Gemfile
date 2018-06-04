@@ -28,6 +28,8 @@ group :test do
   gem 'database_cleaner'
   # Add Faker
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  # Add Factory Bot
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
