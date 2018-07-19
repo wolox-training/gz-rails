@@ -38,7 +38,7 @@ describe BooksController, type: :controller do
 
     context 'with a non existing id' do
       it 'responds with 404 status' do
-        get :show, params: { id: '6' }
+        get :show, params: { id: 6 }
         expect(response).to have_http_status(:not_found)
       end
     end
