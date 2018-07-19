@@ -49,3 +49,6 @@ dump.rdb
 
 # Ignore tests
 /test
+
+# Ignore vscode
+.vscode
