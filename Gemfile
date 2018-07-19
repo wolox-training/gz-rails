@@ -50,3 +50,9 @@ gem 'rubocop-rspec'
 gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth'
+
+# Add paginate
+gem 'wor-paginate'
+
+# Add active model serializers
+gem 'active_model_serializers', '~> 0.10.0'
