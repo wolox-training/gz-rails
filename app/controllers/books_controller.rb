@@ -1,5 +1,10 @@
 class BooksController < ApplicationController
   include Wor::Paginate
+  rescue_from ActiveRecord::RecordNotFound, with: :error_404
+
+  def error_404
+    render json: { message: 'The record was not found' }, status: :not_found
+  end
 
   def index
     books = Book.all
