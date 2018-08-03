@@ -58,3 +58,6 @@ gem 'wor-paginate'
 
 # Add active model serializers
 gem 'active_model_serializers', '~> 0.10.0'
+
+# Added at 2018-08-02 18:14:27 -0300 by gzamudio:
+gem "rack-cors", "~> 1.0"
