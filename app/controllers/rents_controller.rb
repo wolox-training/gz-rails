@@ -1,6 +1,5 @@
 class RentsController < ApplicationController
   include Wor::Paginate
-  before_action :authenticate_user!
 
   def index
     rents = Rent.all
@@ -10,6 +9,7 @@ class RentsController < ApplicationController
   def create
     rent = Rent.new(rent_params)
     if rent.save
+      ModelMailer.new_rent_notification(rent).deliver
       render json: rent
     else
       render json: rent.errors
